@@ -1,0 +1,106 @@
+[
+  {
+    "data": "2026-10-27",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Victor S."
+  },
+  {
+    "data": "2026-10-22",
+    "valor_centavos": -4000,
+    "categoria": "Goleiros"
+  },
+  {
+    "data": "2026-10-22",
+    "valor_centavos": -4000,
+    "categoria": "Goleiros"
+  },
+  {
+    "data": "2026-10-21",
+    "valor_centavos": -63000,
+    "categoria": "Mensalidade da quadra"
+  },
+  {
+    "data": "2026-10-21",
+    "valor_centavos": -7200,
+    "categoria": "Mensalidade da quadra"
+  },
+  {
+    "data": "2026-10-21",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Jonas S."
+  },
+  {
+    "data": "2026-10-20",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Carlito K."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Julio S."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Igor C."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Eduardo C."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Afonso R."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Philipe P."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Eder S."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Gabriel H."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Alessandro S."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Eduardo I."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Renato N."
+  },
+  {
+    "data": "2026-10-19",
+    "valor_centavos": 8500,
+    "categoria": "Mensalidade do grupo",
+    "pagador": "Marco S."
+  }
+]

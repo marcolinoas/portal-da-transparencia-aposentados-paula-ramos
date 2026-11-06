@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+  color: #172923;
+  background: #f2f6f3;
+}
+
+body { margin: 0; }
+
+main {
+  max-width: 52rem;
+  margin: auto;
+  padding: 1.5rem clamp(1rem, 4vw, 3rem) 3rem;
+}
+
+header {
+  background: #103f32;
+  color: white;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border-radius: 1rem;
+}
+
+h1 { margin: 0.25rem 0; font-size: clamp(2rem, 6vw, 3rem); }
+header p { margin: 0; }
+.rotulo { color: #a8e4cb; font-weight: 700; }
+.filtro { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; }
+label, dt { font-weight: 650; }
+
+select {
+  font: inherit;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid #70877b;
+  border-radius: 0.4rem;
+  background: white;
+  color: inherit;
+}
+
+.totais {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.75rem;
+}
+
+.totais div, table { background: white; border: 1px solid #d3ded7; }
+.totais div { padding: 0.85rem; border-radius: 0.65rem; }
+dd { margin: 0.3rem 0 0; font-size: 1.45rem; font-weight: 750; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 0.6rem clamp(0.35rem, 2vw, 1rem); border-bottom: 1px solid #d3ded7; }
+th { text-align: left; background: #e3efe8; }
+td:first-child, td:last-child { white-space: nowrap; }
+th:last-child, td:last-child { text-align: right; }
+dd, td { font-variant-numeric: tabular-nums; }

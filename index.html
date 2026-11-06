@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Caixa do futebol</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="rotulo">Prestação de contas</p>
+      <h1>Caixa do futebol</h1>
+      <p>Acompanhe as entradas, as saídas e o resultado de cada mês.</p>
+    </header>
+
+    <div class="filtro">
+      <label for="mes">Mês</label>
+      <select id="mes" disabled><option>Carregando…</option></select>
+    </div>
+    <p id="status" role="status">Carregando movimentações…</p>
+
+    <section id="extrato" aria-label="Extrato do mês" hidden>
+      <dl class="totais">
+        <div><dt>Entradas</dt><dd id="entradas"></dd></div>
+        <div><dt>Saídas</dt><dd id="saidas"></dd></div>
+        <div><dt>Resultado do período</dt><dd id="resultado"></dd></div>
+      </dl>
+      <h2>Resumo por categoria</h2>
+      <dl class="totais">
+        <div><dt>Mensalidades do grupo</dt><dd id="mensalidades"></dd><small id="contagem-mensalidades"></small></div>
+        <div><dt>Mensalidade da quadra</dt><dd id="quadra"></dd></div>
+        <div><dt>Goleiros</dt><dd id="goleiros"></dd></div>
+      </dl>
+      <h2>Movimentações</h2>
+      <table aria-label="Movimentações do mês">
+        <thead>
+          <tr><th scope="col">Data</th><th scope="col">Categoria e pagador</th><th scope="col">Valor</th></tr>
+        </thead>
+        <tbody id="movimentacoes"></tbody>
+      </table>
+    </section>
+    <noscript>Ative o JavaScript para consultar as movimentações.</noscript>
+  </main>
+</body>
+</html>
