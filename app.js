@@ -8,6 +8,13 @@ const nomeMes = new Intl.DateTimeFormat("pt-BR", {
 });
 const periodosParciais = { "2026-11": "até 09/11" };
 
+function pagantes(lancamentos) {
+  return new Set(lancamentos
+    .filter(({ categoria, valor_centavos, pagador }) =>
+      categoria === "Mensalidade do grupo" && valor_centavos > 0 && pagador)
+    .map(({ pagador }) => pagador));
+}
+
 function exibir(lancamentos) {
   let entradas = 0;
   let saidas = 0;
@@ -80,8 +87,31 @@ async function carregar() {
       const rotulo = nomeMes.format(data);
       return new Option(parcial ? `${rotulo} (parcial ${parcial})` : rotulo, mes);
     }));
-    filtro.addEventListener("change", () => exibir(porMes.get(filtro.value)));
-    exibir(porMes.get(filtro.value));
+    const baseOutubro = pagantes(porMes.get("2026-10") ?? []);
+    const pendencias = document.querySelector("#pendencias");
+    const listaPendencias = document.querySelector("#lista-pendencias");
+    const resumoPendencias = document.querySelector("#resumo-pendencias");
+    function atualizarMes() {
+      const mes = filtro.value;
+      const lancamentosDoMes = porMes.get(mes);
+      exibir(lancamentosDoMes);
+      pendencias.hidden = mes !== "2026-11" || baseOutubro.size === 0;
+      if (pendencias.hidden) return;
+
+      const pagos = pagantes(lancamentosDoMes);
+      const faltantes = [...baseOutubro]
+        .filter((nome) => !pagos.has(nome))
+        .sort((a, b) => a.localeCompare(b, "pt-BR"));
+      resumoPendencias.textContent =
+        `${baseOutubro.size - faltantes.length} de ${baseOutubro.size} pagantes de outubro identificados em novembro.`;
+      listaPendencias.replaceChildren(...faltantes.map((nome) => {
+        const item = document.createElement("li");
+        item.textContent = nome;
+        return item;
+      }));
+    }
+    filtro.addEventListener("change", atualizarMes);
+    atualizarMes();
     filtro.disabled = false;
     extrato.hidden = false;
   } catch {
