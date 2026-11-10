@@ -6,6 +6,7 @@ const moeda = new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL
 const nomeMes = new Intl.DateTimeFormat("pt-BR", {
   month: "long", year: "numeric", timeZone: "UTC",
 });
+const periodosParciais = { "2026-11": "até 09/11" };
 
 function exibir(lancamentos) {
   let entradas = 0;
@@ -75,7 +76,9 @@ async function carregar() {
     const meses = [...porMes.keys()].sort().reverse();
     filtro.replaceChildren(...meses.map((mes) => {
       const data = new Date(`${mes}-01T00:00:00Z`);
-      return new Option(nomeMes.format(data), mes);
+      const parcial = periodosParciais[mes];
+      const rotulo = nomeMes.format(data);
+      return new Option(parcial ? `${rotulo} (parcial ${parcial})` : rotulo, mes);
     }));
     filtro.addEventListener("change", () => exibir(porMes.get(filtro.value)));
     exibir(porMes.get(filtro.value));
